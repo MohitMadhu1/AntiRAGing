@@ -3,7 +3,9 @@ from datetime import timedelta
 import redis
 from app.config import settings
 
-redis_client = redis.from_url(settings.redis_url)
+# Standard python redis package expects "none" instead of Celery's "CERT_NONE"
+clean_url = settings.redis_url.replace("CERT_NONE", "none")
+redis_client = redis.from_url(clean_url)
 
 class ProgressManager:
     @staticmethod
