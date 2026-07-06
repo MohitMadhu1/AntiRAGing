@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import SketchButton from './SketchButton';
-import { ThemeToggle } from './ThemeToggle';
 import { removeToken } from '@/lib/auth';
 
 interface SketchNavbarProps {
@@ -28,7 +27,6 @@ export default function SketchNavbar({ isLoggedIn = false, onLogin }: SketchNavb
         <span className="logo-brackets">]</span>
       </Link>
       <div className="nav-actions">
-        <ThemeToggle />
         {isLoggedIn ? (
           <>
             {pathname !== '/dashboard' && (

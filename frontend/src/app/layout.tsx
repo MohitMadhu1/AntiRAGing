@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import NetworkBackground from "@/components/NetworkBackground";
-import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -14,12 +13,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body>
-        <ThemeProvider attribute="data-theme" defaultTheme="system" enableSystem>
-          <NetworkBackground />
-          {children}
-        </ThemeProvider>
+        <NetworkBackground />
+        {children}
       </body>
     </html>
   );

@@ -32,28 +32,6 @@
   /* Sketch variables */
   --border-roughness: 1.5;
   --sketch-stroke-width: 1.8;
-  --noise-opacity: 0.03;
-}
-
-[data-theme='dark'] {
-  /* Dark Slate / Chalk Palette */
-  --paper: #1a1b1e;
-  --paper-dark: #25262b;
-  --paper-lines: #373a40;
-  --ink: #e4e5e8;
-  --ink-light: #909296;
-  --pencil: #5c5f66;
-  --pencil-light: #373a40;
-  
-  /* Highlights in dark mode are semi-transparent glow */
-  --highlight-yellow: rgba(255, 235, 59, 0.25);
-  --highlight-blue: rgba(66, 165, 245, 0.25);
-  --highlight-blue-dark: rgba(66, 165, 245, 0.4);
-  --marker-red: #ff6b6b;
-  --marker-green: #51cf66;
-  --eraser: #2c2e33;
-  
-  --noise-opacity: 0.05;
 }
 
 * {
@@ -72,7 +50,7 @@ body {
   background-color: var(--paper);
   background-image:
     /* Subtle paper grain */
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='var(--noise-opacity)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E"),
     /* Dot Grid */
     radial-gradient(var(--pencil-light) 1px, transparent 1px);
   background-size: 256px 256px, 24px 24px;
