@@ -1042,8 +1042,8 @@ code, pre {
 }
 
 .md-rendered .md-p {
-  margin: 0.6rem 0;
-  line-height: 1.75;
+  margin: 1.2rem 0;
+  line-height: 1.85;
 }
 
 .md-rendered .md-strong {
@@ -1053,12 +1053,12 @@ code, pre {
 
 .md-rendered .md-ul,
 .md-rendered .md-ol {
-  margin: 0.5rem 0 0.5rem 1.5rem;
+  margin: 1.2rem 0 1.2rem 1.5rem;
 }
 
 .md-rendered .md-li {
-  margin: 0.3rem 0;
-  line-height: 1.65;
+  margin: 0.5rem 0;
+  line-height: 1.8;
 }
 
 .md-rendered .md-li::marker {
