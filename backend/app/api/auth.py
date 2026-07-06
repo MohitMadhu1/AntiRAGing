@@ -79,9 +79,8 @@ async def github_callback(code: str, db: AsyncSession = Depends(get_db)):
     # 4. Generate JWT
     jwt_token = create_access_token(data={"sub": user.id})
     
-    # 5. Redirect back to frontend dashboard with token in URL (or set cookie)
-    # For MVP, we will pass it in the query string to the frontend
-    # Update this URL to match your Next.js local port
-    frontend_url = "http://localhost:3000/dashboard"
+    # 5. Redirect back to frontend dashboard with token in URL
+    base_url = settings.frontend_url if settings.frontend_url and settings.frontend_url != "*" else "http://localhost:3000"
+    frontend_url = f"{base_url.rstrip('/')}/dashboard"
     return RedirectResponse(url=f"{frontend_url}?token={jwt_token}")
 
